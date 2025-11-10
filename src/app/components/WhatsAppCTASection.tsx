@@ -32,7 +32,7 @@ export default function WhatsAppCTASection() {
           </p>
         </div>
         <Link
-          href="https://wa.me/521234567890"
+          href="https://wa.me/56927416008"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-3 rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-900/30 transition hover:bg-emerald-300"

@@ -2,20 +2,28 @@ import Image from "next/image";
 
 const partners = [
   {
-    name: "AXA",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/AXA_Logo.svg/512px-AXA_Logo.svg.png",
+    name: "ACHS",
+    logo: "/images/asociated/achs.png",
   },
   {
-    name: "Seguros Monterrey",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Seguros_Monterrey_New_York_Life_logo.svg/512px-Seguros_Monterrey_New_York_Life_logo.svg.png",
+    name: "Clínica Aéreo",
+    logo: "/images/asociated/aereo.png",
   },
   {
-    name: "GNP",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/GNPlogo.svg/512px-GNPlogo.svg.png",
+    name: "Clínica Cable",
+    logo: "/images/asociated/cable.png",
   },
   {
-    name: "MetLife",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/MetLife_logo.svg/512px-MetLife_logo.svg.png",
+    name: "Imatec",
+    logo: "/images/asociated/imatec.png",
+  },
+  {
+    name: "Centro Mirador",
+    logo: "/images/asociated/mirador.png",
+  },
+  {
+    name: "PHAM",
+    logo: "/images/asociated/pham.png",
   },
 ];
 
@@ -28,13 +36,10 @@ export default function PartnersSection() {
             Convenios
           </p>
           <h2 className="mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Aseguradoras y alianzas estratégicas
+            Alianzas estratégicas
           </h2>
-          <p className="mt-3 text-sm text-slate-600 sm:text-base">
-            Te ayudamos con la gestión de reembolsos y trámites según tu póliza.
-          </p>
         </div>
-        <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
           {partners.map((partner) => (
             <div
               key={partner.name}
@@ -43,9 +48,11 @@ export default function PartnersSection() {
               <Image
                 src={partner.logo}
                 alt={partner.name}
-                width={120}
-                height={60}
-                className="h-12 w-auto object-contain"
+                width={160}
+                height={100}
+                sizes="150px"
+                className="w-[150px] max-w-full object-contain"
+                style={{ height: "auto" }}
               />
             </div>
           ))}

@@ -6,24 +6,24 @@ import { motion } from "framer-motion";
 
 const faqs = [
   {
-    question: "¿Cómo saber si necesito cirugía maxilofacial?",
+    question: "¿La cirugía de terceros molares duele mucho?",
     answer:
-      "Realizamos una valoración clínica y estudios de imagen 3D. Analizamos mordida, articulaciones y estética facial para definir si requieres tratamiento quirúrgico o conservador.",
+      "No. Trabajamos con anestesia local y, cuando es necesario, con sedación consciente para que no sientas dolor durante el procedimiento. El postoperatorio se controla con antiinflamatorios y analgésicos recetados, por lo que las molestias suelen ser leves y manejables.",
   },
   {
-    question: "¿Ofrecen opciones de financiamiento?",
+    question: "¿Cuánto tarda en cicatrizar un implante dental?",
     answer:
-      "Sí, contamos con planes de pago y convenios con aseguradoras. Nuestro equipo administrativo te acompaña en el proceso para elegir la opción ideal.",
+      "La osteointegración inicial tarda entre 8 y 12 semanas, dependiendo de la calidad ósea. Desde la primera cita te indicamos controles y cuidados para favorecer una cicatrización rápida y colocar la prótesis definitiva en el momento adecuado.",
   },
   {
-    question: "¿El procedimiento es doloroso?",
+    question: "¿Puedo operarme si tengo diabetes?",
     answer:
-      "Utilizamos sedación consciente y protocolos de analgesia personalizada. La mayoría de los pacientes refieren molestias mínimas controladas con medicación.",
+      "Sí, siempre que la glicemia esté controlada. Coordinamos con tu médico tratante, realizamos exámenes previos y ajustamos el plan quirúrgico para garantizar una recuperación segura, minimizando riesgos de infección o retraso en la cicatrización.",
   },
   {
-    question: "¿Qué cuidados debo tener después de la cirugía?",
+    question: "¿Qué cuidados debo tener después de una cirugía oral?",
     answer:
-      "Te entregamos una guía personalizada con alimentación, higiene, citas de control y líneas de contacto directo ante cualquier duda.",
+      "Te entregamos instrucciones detalladas que incluyen reposo relativo, dieta blanda, higiene con enjuagues específicos y uso de medicamentos. Además cuentas con un número de contacto directo para resolver dudas durante el proceso de recuperación.",
   },
 ];
 

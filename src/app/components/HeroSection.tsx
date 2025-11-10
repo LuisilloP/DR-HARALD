@@ -10,7 +10,7 @@ const stats = [
     suffix: "+",
   },
   {
-    label: "Sonrisas restauradas",
+    label: "Pacientes Dentales",
     value: 1437,
     suffix: "+",
   },

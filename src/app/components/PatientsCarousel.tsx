@@ -24,17 +24,17 @@ const patientGalleries: PatientGallery[] = [
       "Secuencia de diseño de sonrisa, colocación de prótesis provisionales y rehabilitación final cerámica.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1595231712200-0741d48d16f8?auto=format&fit=crop&w=1200&q=80",
-        alt: "Mariana López - diseño de sonrisa",
+        src: "/images/pacients/p1.jpg",
+        alt: "p1",
       },
       {
-        src: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1200&q=80",
-        alt: "Mariana López - colocación de prótesis",
+        src: "/images/pacients/p2.jpg",
+        alt: "p2",
       },
-      {
-        src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
-        alt: "Mariana López - resultado final",
-      },
+      // {
+      //   src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+      //   alt: "Mariana López - resultado final",
+      // },
     ],
   },
   {
@@ -63,10 +63,8 @@ const beforeAfterCase = {
   title: "Paciente Silvia – cirugía ortognática",
   description:
     "Corrección de mordida abierta y armonización facial tras cirugía ortognática bimaxilar con planificación 3D.",
-  beforeSrc:
-    "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1400&q=80",
-  afterSrc:
-    "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=1400&q=80",
+  beforeSrc: "/images/pacients/antes.png",
+  afterSrc: "/images/pacients/despues.jpg",
   highlight: "Antes / Después",
 };
 
@@ -122,10 +120,6 @@ export default function PatientsCarousel() {
               Historias clínicas documentadas paso a paso
             </h2>
           </div>
-          <p className="text-sm text-white/70 sm:max-w-md">
-            Recorre cada tratamiento para conocer el proceso completo desde la
-            planeación, la cirugía y los resultados finales.
-          </p>
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
