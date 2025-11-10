@@ -1,16 +1,22 @@
+/* Fonts are loaded using next/font/google for optimal performance. If you have the 'Mightype' font file (woff/woff2),
+  place it in /public/fonts and update the @font-face below. */
+
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Font stacks exposed as CSS variables for easy usage (Caveat is loaded via next/font) */
+  --font-caveat: "Caveat", cursive;
+  /* Removed Playlist Script (not available via next/font). If needed, re-add via @import. */
+  --font-mightype: "Mightype", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Removed non-standard @theme rule which caused lint errors.
+   If you need to expose theme variables for a design system,
+   add them directly under :root or via a CSS-in-JS solution. */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,5 +28,28 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Default system font. Use .font-caveat / .font-mightype utility classes for acentos manuscritos. */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+}
+
+/* Local font (placeholder):
+   If you have Mightype as a local file, add e.g. /public/fonts/Mightype.woff2 and uncomment the block below.
+@font-face {
+  font-family: 'Mightype';
+  src: url('/fonts/Mightype.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+/* Utility font classes to use like Tailwind utilities */
+@layer utilities {
+  .font-caveat {
+    font-family: var(--font-caveat) !important;
+  }
+  .font-mightype {
+    font-family: var(--font-mightype) !important;
+  }
 }
