@@ -1,1 +1,1 @@
-export { default } from "./BeforeAfterCard";
+export { default } from "@/app/components/ui/BeforeAfterCard";
