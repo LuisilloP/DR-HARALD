@@ -63,6 +63,8 @@ export type PhotoFallProps = {
   sideOffsetVw?: number;
   sideOffsetVwMobile?: number;
   limitImagesOnMobile?: number;
+  
+  autoStart?: boolean;
 
   className?: string;
   photoClassName?: string;
@@ -80,6 +82,7 @@ const PhotoFall = forwardRef<PhotoFallHandle, PhotoFallProps>(function PhotoFall
     sideOffsetVw = 60,
     sideOffsetVwMobile = 40,
     limitImagesOnMobile = 0,
+    autoStart = true,
     className = '',
     photoClassName = '',
   },
@@ -186,13 +189,15 @@ const PhotoFall = forwardRef<PhotoFallHandle, PhotoFallProps>(function PhotoFall
   useImperativeHandle(ref, () => ({ replay }), []);
 
   useEffect(() => {
-    replay();
+    if (autoStart) {
+      replay();
+    }
     return () => {
       timeoutsRef.current.forEach((id) => window.clearTimeout(id));
       timeoutsRef.current = [];
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [imgs, mode, durationEff, staggerEff, spreads.sx, spreads.sy, isSmall]);
+  }, [imgs, mode, durationEff, staggerEff, spreads.sx, spreads.sy, isSmall, autoStart]);
 
   return (
     <div className="w-full">

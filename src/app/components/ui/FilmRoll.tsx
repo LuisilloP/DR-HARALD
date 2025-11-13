@@ -16,8 +16,10 @@ export type FilmRollProps = {
   direction?: 'left' | 'right';
   speedPxPerSec?: number;
   frameWidthPx?: number;
+  frameWidthPxMobile?: number;
   gapPx?: number;
   heightPx?: number;
+  heightPxMobile?: number;
   pauseOnHover?: boolean;
   className?: string;
 };
@@ -27,8 +29,10 @@ const FilmRoll: React.FC<FilmRollProps> = ({
   direction = 'left',
   speedPxPerSec = 80,
   frameWidthPx = 220,
+  frameWidthPxMobile,
   gapPx = 16,
   heightPx = 220,
+  heightPxMobile,
   pauseOnHover = true,
   className = '',
 }) => {
@@ -42,10 +46,17 @@ const FilmRoll: React.FC<FilmRollProps> = ({
   return (
     <div
       className={[
-        'relative overflow-hidden rounded-xl bg-slate-800/60 border border-slate-700',
+        'relative overflow-hidden rounded-xl bg-slate-800/60 border border-slate-700 film-roll-container',
         className,
       ].join(' ')}
-      style={{ height: heightPx }}
+      style={{ 
+        ['--height-mobile' as string]: `${heightPxMobile || heightPx}px`,
+        ['--height-desktop' as string]: `${heightPx}px`,
+        ['--frame-height-mobile' as string]: `${(heightPxMobile || heightPx) - (barH + 10) * 2}px`,
+        ['--frame-height-desktop' as string]: `${heightPx - (barH + 10) * 2}px`,
+        ['--frame-width-mobile' as string]: `${frameWidthPxMobile || frameWidthPx}px`,
+        ['--frame-width-desktop' as string]: `${frameWidthPx}px`,
+      }}
     >
       <div
         className="absolute inset-[12px] rounded-xl bg-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,.04),0_10px_30px_rgba(0,0,0,.35)]"
@@ -99,10 +110,6 @@ const FilmRoll: React.FC<FilmRollProps> = ({
             <div
               key={i}
               className="frame overflow-hidden rounded-md bg-black/70 ring-1 ring-black/30"
-              style={{
-                width: frameWidthPx,
-                height: heightPx - (barH + 10) * 2,
-              }}
             >
               <img
                 src={src}
@@ -117,6 +124,24 @@ const FilmRoll: React.FC<FilmRollProps> = ({
       </div>
 
       <style jsx>{`
+        .film-roll-container {
+          height: var(--height-mobile);
+        }
+        @media (min-width: 768px) {
+          .film-roll-container {
+            height: var(--height-desktop);
+          }
+        }
+        .frame {
+          width: var(--frame-width-mobile);
+          height: var(--frame-height-mobile);
+        }
+        @media (min-width: 768px) {
+          .frame {
+            width: var(--frame-width-desktop);
+            height: var(--frame-height-desktop);
+          }
+        }
         .film-track { transform: translateX(0); }
         @keyframes filmScrollLeft {
           from { transform: translateX(0); }

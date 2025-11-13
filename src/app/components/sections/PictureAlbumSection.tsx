@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import PhotoFall, { PhotoFallHandle } from '@/app/components/ui/PhotoFall';
 import FilmRoll from '@/app/components/ui/FilmRoll';
 
@@ -26,9 +26,41 @@ const rollImages = [
 
 export default function PictureAlbumSection() {
   const fallRef = useRef<PhotoFallHandle>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const currentSection = sectionRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            // Pequeño delay para que se vea mejor la animación
+            setTimeout(() => {
+              fallRef.current?.replay();
+            }, 300);
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Inicia cuando el 20% es visible
+      }
+    );
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, [hasAnimated]);
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+    <section ref={sectionRef} className="relative py-16 md:py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -62,9 +94,10 @@ export default function PictureAlbumSection() {
             staggerMs={340}
             spreadX={0.2}
             spreadY={0.2}
-            limitImagesOnMobile={6}
+            limitImagesOnMobile={0}
             sideOffsetVw={60}
             sideOffsetVwMobile={42}
+            autoStart={false}
             photoClassName="!w-[84vw] sm:!w-[68vw] md:!w-[44vw] !min-w-[280px] !max-w-[480px]"
           />
         </div>
@@ -80,8 +113,10 @@ export default function PictureAlbumSection() {
             direction="left"
             speedPxPerSec={45}
             frameWidthPx={440}
+            frameWidthPxMobile={220}
             gapPx={32}
             heightPx={440}
+            heightPxMobile={220}
             pauseOnHover
           />
         </div>
