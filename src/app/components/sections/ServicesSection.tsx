@@ -1,6 +1,6 @@
 "use client";
 
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "@/app/components/ui/ServiceCard";
 import { motion } from "framer-motion";
 
 const services = [

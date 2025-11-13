@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedCounter from "./AnimatedCounter";
+import AnimatedCounter from "@/app/components/ui/AnimatedCounter";
 import { motion } from "framer-motion";
 
 const stats = [

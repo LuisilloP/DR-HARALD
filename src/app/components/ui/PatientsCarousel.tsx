@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import BeforeAfterCard from "./BeforeAfterCard";
+import BeforeAfterCard from "@/app/components/ui/BeforeAfterCard";
 
 import "swiper/css";
 import "swiper/css/navigation";
