@@ -3,7 +3,7 @@ import Image from "next/image";
 import { RiWhatsappFill } from "react-icons/ri";
 
 const backgroundImage =
-  "https://images.unsplash.com/photo-1520012218364-4f36dcb94bd6?auto=format&fit=crop&w=1600&q=80";
+  "/images/sillon_wsp.jpg";
 
 export default function WhatsAppCTASection() {
   return (
@@ -13,7 +13,7 @@ export default function WhatsAppCTASection() {
         alt="Consultorio dental"
         fill
         priority
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-center md:object-[50%_35%]"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-emerald-950/80" />

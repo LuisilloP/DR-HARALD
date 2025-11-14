@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 
 // =====================================================
 // === COMPONENTE: FilmRoll
@@ -9,10 +9,13 @@ import React from 'react';
 //   Crea una tira de "rollo fotográfico" que se desplaza
 //   horizontalmente en loop infinito duplicando los frames.
 //   Pausa opcional al hover, dirección y velocidad configurables.
+//   Soporta arrastre manual con mouse/touch para navegar.
 // =====================================================
 
 export type FilmRollProps = {
-  images: string[];
+  images?: string[];
+  media?: string[];
+  mediaType?: 'image' | 'video';
   direction?: 'left' | 'right';
   speedPxPerSec?: number;
   frameWidthPx?: number;
@@ -26,6 +29,8 @@ export type FilmRollProps = {
 
 const FilmRoll: React.FC<FilmRollProps> = ({
   images,
+  media,
+  mediaType = 'image',
   direction = 'left',
   speedPxPerSec = 80,
   frameWidthPx = 220,
@@ -36,12 +41,17 @@ const FilmRoll: React.FC<FilmRollProps> = ({
   pauseOnHover = true,
   className = '',
 }) => {
-  const count = images.length;
+  // Usar media si está disponible, si no usar images
+  const items = media || images || [];
+  const itemType = media ? mediaType : 'image';
+  const count = items.length;
   const unit = frameWidthPx + gapPx;
   const totalDistance = count * unit;
   const durationSec = Math.max(1, totalDistance / Math.max(1, speedPxPerSec));
   const barH = 24;
   const stripRadius = 12;
+
+  const trackRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
@@ -96,6 +106,7 @@ const FilmRoll: React.FC<FilmRollProps> = ({
         style={{ paddingTop: barH + 10, paddingBottom: barH + 10 }}
       >
         <div
+          ref={trackRef}
           className="film-track flex will-change-transform"
           style={{
             gap: gapPx,
@@ -106,18 +117,29 @@ const FilmRoll: React.FC<FilmRollProps> = ({
             ['--roll-total' as string]: `${totalDistance}px`,
           }}
         >
-          {images.concat(images).map((src, i) => (
+          {items.concat(items).map((src, i) => (
             <div
               key={i}
               className="frame overflow-hidden rounded-md bg-black/70 ring-1 ring-black/30"
             >
-              <img
-                src={src}
-                alt={`frame ${i + 1}`}
-                className="w-full h-full object-cover"
-                draggable={false}
-                loading={i > 2 ? 'lazy' : 'eager'}
-              />
+              {itemType === 'video' ? (
+                <video
+                  src={src}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              ) : (
+                <img
+                  src={src}
+                  alt={`frame ${i + 1}`}
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                  loading={i > 2 ? 'lazy' : 'eager'}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -142,7 +164,11 @@ const FilmRoll: React.FC<FilmRollProps> = ({
             height: var(--frame-height-desktop);
           }
         }
-        .film-track { transform: translateX(0); }
+        .film-track { 
+          transform: translateX(0);
+          user-select: none;
+          -webkit-user-select: none;
+        }
         @keyframes filmScrollLeft {
           from { transform: translateX(0); }
           to { transform: translateX(calc(-1 * var(--roll-total))); }
