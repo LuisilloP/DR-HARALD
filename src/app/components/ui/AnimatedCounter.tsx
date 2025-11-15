@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
@@ -24,6 +25,16 @@ export default function AnimatedCounter({
     triggerOnce: true,
     threshold: 0.4,
   });
+  const [isMounted, setIsMounted] = useState(false);
+  const counterRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <span ref={ref} className={className}>0{suffix}</span>;
+  }
 
   return (
     <span ref={ref} className={className}>
@@ -35,8 +46,6 @@ export default function AnimatedCounter({
         suffix={suffix}
         decimals={decimals}
         preserveValue
-        enableScrollSpy
-        scrollSpyOnce
       />
     </span>
   );

@@ -53,20 +53,14 @@ const FilmRoll: React.FC<FilmRollProps> = ({
 
   const trackRef = useRef<HTMLDivElement>(null);
 
+  const containerStyle = {
+    height: heightPxMobile || heightPx,
+  };
+
   return (
     <div
-      className={[
-        'relative overflow-hidden rounded-xl bg-slate-800/60 border border-slate-700 film-roll-container',
-        className,
-      ].join(' ')}
-      style={{ 
-        ['--height-mobile' as string]: `${heightPxMobile || heightPx}px`,
-        ['--height-desktop' as string]: `${heightPx}px`,
-        ['--frame-height-mobile' as string]: `${(heightPxMobile || heightPx) - (barH + 10) * 2}px`,
-        ['--frame-height-desktop' as string]: `${heightPx - (barH + 10) * 2}px`,
-        ['--frame-width-mobile' as string]: `${frameWidthPxMobile || frameWidthPx}px`,
-        ['--frame-width-desktop' as string]: `${frameWidthPx}px`,
-      }}
+      className={`film-roll-container-${count} relative overflow-hidden rounded-xl bg-slate-800/60 border border-slate-700 ${className}`}
+      style={containerStyle}
     >
       <div
         className="absolute inset-[12px] rounded-xl bg-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,.04),0_10px_30px_rgba(0,0,0,.35)]"
@@ -107,20 +101,21 @@ const FilmRoll: React.FC<FilmRollProps> = ({
       >
         <div
           ref={trackRef}
-          className="film-track flex will-change-transform"
+          className={`flex will-change-transform select-none ${pauseOnHover ? 'hover:pause-animation' : ''}`}
           style={{
             gap: gapPx,
-            animationName: direction === 'left' ? 'filmScrollLeft' : 'filmScrollRight',
-            animationDuration: `${durationSec}s`,
-            animationTimingFunction: 'linear',
-            animationIterationCount: 'infinite',
-            ['--roll-total' as string]: `${totalDistance}px`,
+            animation: `${direction === 'left' ? 'filmScrollLeft' : 'filmScrollRight'} ${durationSec}s linear infinite`,
+            transform: 'translateX(0)',
           }}
         >
           {items.concat(items).map((src, i) => (
             <div
               key={i}
-              className="frame overflow-hidden rounded-md bg-black/70 ring-1 ring-black/30"
+              className={`film-frame-${count} overflow-hidden rounded-md bg-black/70 ring-1 ring-black/30 flex-shrink-0`}
+              style={{
+                width: frameWidthPxMobile || frameWidthPx,
+                height: (heightPxMobile || heightPx) - (barH + 10) * 2,
+              }}
             >
               {itemType === 'video' ? (
                 <video
@@ -145,43 +140,31 @@ const FilmRoll: React.FC<FilmRollProps> = ({
         </div>
       </div>
 
-      <style jsx>{`
-        .film-roll-container {
-          height: var(--height-mobile);
-        }
-        @media (min-width: 768px) {
-          .film-roll-container {
-            height: var(--height-desktop);
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes filmScrollLeft {
+            from { transform: translateX(0); }
+            to { transform: translateX(-${totalDistance}px); }
           }
-        }
-        .frame {
-          width: var(--frame-width-mobile);
-          height: var(--frame-height-mobile);
-        }
-        @media (min-width: 768px) {
-          .frame {
-            width: var(--frame-width-desktop);
-            height: var(--frame-height-desktop);
+          @keyframes filmScrollRight {
+            from { transform: translateX(-${totalDistance}px); }
+            to { transform: translateX(0); }
           }
-        }
-        .film-track { 
-          transform: translateX(0);
-          user-select: none;
-          -webkit-user-select: none;
-        }
-        @keyframes filmScrollLeft {
-          from { transform: translateX(0); }
-          to { transform: translateX(calc(-1 * var(--roll-total))); }
-        }
-        @keyframes filmScrollRight {
-          from { transform: translateX(calc(-1 * var(--roll-total))); }
-          to { transform: translateX(0); }
-        }
-        ${pauseOnHover ? `
-        div:hover > div > div > .film-track {
-          animation-play-state: paused;
-        }` : ''}
-      `}</style>
+          @media (min-width: 768px) {
+            .film-roll-container-${count} {
+              height: ${heightPx}px !important;
+            }
+            .film-frame-${count} {
+              width: ${frameWidthPx}px !important;
+              height: ${heightPx - (barH + 10) * 2}px !important;
+            }
+          }
+          ${pauseOnHover ? `
+          .hover\\:pause-animation:hover {
+            animation-play-state: paused !important;
+          }` : ''}
+        `
+      }} />
     </div>
   );
 };

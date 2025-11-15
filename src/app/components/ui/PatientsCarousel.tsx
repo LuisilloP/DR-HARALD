@@ -43,18 +43,18 @@ const patientGalleries: PatientGallery[] = [
     summary:
       "Colocación asistida por computadora, carga inmediata y seguimiento de osteointegración en 6 semanas.",
     images: [
-      {
-        src: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=1200&q=80",
-        alt: "Carlos Martínez - planeación guiada",
+       {
+        src: "/images/pacients/p1.jpg",
+        alt: "p1",
       },
       {
-        src: "https://images.unsplash.com/photo-1609840170480-4c4406d3d12b?auto=format&fit=crop&w=1200&q=80",
-        alt: "Carlos Martínez - cirugía",
+        src: "/images/pacients/p2.jpg",
+        alt: "p2",
       },
-      {
-        src: "https://images.unsplash.com/photo-1606811841689-23cdf3be3b4d?auto=format&fit=crop&w=1200&q=80",
-        alt: "Carlos Martínez - rehabilitación",
-      },
+      // {
+      //   src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+      //   alt: "Mariana López - resultado final",
+      // },
     ],
   },
 ];
