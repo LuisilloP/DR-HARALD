@@ -1,0 +1,10 @@
+# Permitir a todos los bots
+User-agent: *
+Allow: /
+
+# Bloquear archivos sensibles
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap
+Sitemap: https://drharald.cl/sitemap.xml

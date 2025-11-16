@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
@@ -25,12 +25,7 @@ export default function AnimatedCounter({
     triggerOnce: true,
     threshold: 0.4,
   });
-  const [isMounted, setIsMounted] = useState(false);
-  const counterRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const [isMounted] = useState(true);
 
   if (!isMounted) {
     return <span ref={ref} className={className}>0{suffix}</span>;

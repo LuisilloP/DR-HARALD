@@ -1,0 +1,30 @@
+{
+    "name": "Dr. Harald Ziller Ortíz - Cirujano Maxilofacial",
+    "short_name": "Dr. Harald",
+    "description": "Cirujano Maxilofacial en Ovalle - Implantes Dentales y Cirugía Oral",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#0ea5e9",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/images/logo_v1.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/logo_v1.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "health",
+        "medical",
+        "business"
+    ],
+    "lang": "es-CL"
+}

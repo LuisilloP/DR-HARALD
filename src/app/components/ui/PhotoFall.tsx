@@ -179,14 +179,14 @@ const PhotoFall = forwardRef<PhotoFallHandle, PhotoFallProps>(function PhotoFall
       const timeoutId = window.setTimeout(() => {
         p.classList.remove('pf-pre');
         // fuerza reflow
-        p.offsetWidth;
+        void p.offsetWidth;
         p.classList.add('pf-in');
       }, i * staggerEff);
       timeoutsRef.current.push(timeoutId);
     });
   }
 
-  useImperativeHandle(ref, () => ({ replay }), []);
+  useImperativeHandle(ref, () => ({ replay }), [replay]);
 
   useEffect(() => {
     if (autoStart) {
@@ -231,7 +231,7 @@ const PhotoFall = forwardRef<PhotoFallHandle, PhotoFallProps>(function PhotoFall
               'ease-[cubic-bezier(.2,.8,.2,1)]',
               photoClassName,
             ].join(' ')}
-            style={{ ['--dur' as any]: `${durationEff}ms` }}
+            style={{ '--dur': `${durationEff}ms` } as React.CSSProperties}
           />
         ))}
 

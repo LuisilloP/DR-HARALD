@@ -64,7 +64,7 @@ const beforeAfterCase = {
   description:
     "Corrección de mordida abierta y armonización facial tras cirugía ortognática bimaxilar con planificación 3D.",
   beforeSrc: "/images/pacients/antes.png",
-  afterSrc: "/images/pacients/despues.jpg",
+  afterSrc: "/images/pacients/despues.png",
   highlight: "Antes / Después",
 };
 

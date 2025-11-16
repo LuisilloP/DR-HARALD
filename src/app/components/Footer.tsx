@@ -5,12 +5,8 @@ import {
   RiLinkedinFill,
   RiWhatsappFill,
 } from "react-icons/ri";
-
-const links = [
-  { label: "Aviso de privacidad", href: "#" },
-  { label: "Política de cookies", href: "#" },
-  { label: "Términos del servicio", href: "#" },
-];
+import { CONTACT, SOCIAL_MEDIA, DOCTOR, FOOTER_LINKS } from "@/lib/constants";
+import { getCurrentYear } from "@/lib/utils";
 
 export default function Footer() {
   return (
@@ -18,30 +14,30 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:justify-between lg:px-8">
         <div className="max-w-md">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-400">
-            Dr. Harald Ziller Ortíz
+            {DOCTOR.name}
           </p>
           <p className="mt-4 text-2xl font-semibold">
             Agenda tu valoración y diseñemos juntos tu tratamiento.
           </p>
           <p className="mt-4 text-sm text-white/70">
-            Horarios: Lunes a Viernes · 8:00 a 19:00 hrs.
+            Horarios: {CONTACT.schedule.full}
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/80">
-            <span>Tel. +56 9 2741 6008</span>
-            <span>dr.haraldziller@gmail.com</span>
+            <span>Tel. {CONTACT.phone}</span>
+            <span>{CONTACT.email}</span>
             <Link
-              href="https://www.google.com/maps?q=Av.+Manuel+Pe%C3%B1afiel+Olivares+1480,+Oficina+416A,+1840000+Ovalle"
+              href={CONTACT.address.googleMapsUrl}
               target="_blank"
               rel="noreferrer"
               className="transition hover:text-white"
             >
-              Av. Manuel Peñafiel Olivares 1480, Oficina 416A, 1840000 Ovalle
+              {CONTACT.address.full}
             </Link>
           </div>
           <div className="mt-6 flex items-center gap-4 text-xl">
             <Link
               aria-label="WhatsApp"
-              href="https://wa.me/56927416008"
+              href={CONTACT.whatsappUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-400 text-slate-950 transition hover:bg-sky-300"
@@ -50,7 +46,7 @@ export default function Footer() {
             </Link>
             <Link
               aria-label="Instagram"
-              href="https://www.instagram.com/dr.haraldziller/"
+              href={SOCIAL_MEDIA.instagram}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:bg-white/10"
@@ -59,7 +55,7 @@ export default function Footer() {
             </Link>
             <Link
               aria-label="Facebook"
-              href="https://www.facebook.com/harald.ortiz"
+              href={SOCIAL_MEDIA.facebook}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:bg-white/10"
@@ -68,7 +64,7 @@ export default function Footer() {
             </Link>
             <Link
               aria-label="LinkedIn"
-              href="https://cl.linkedin.com/in/harald-ziller-ortiz-58435460"
+              href={SOCIAL_MEDIA.linkedin}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:bg-white/10"
@@ -86,13 +82,12 @@ export default function Footer() {
             <ul className="mt-3 space-y-2">
               <li>
                 <Link
-                  href="https://www.google.com/maps?q=Av.+Manuel+Pe%C3%B1afiel+Olivares+1480,+Oficina+416A,+1840000+Ovalle"
+                  href={CONTACT.address.googleMapsUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="transition hover:text-white"
                 >
-                  Av. Manuel Peñafiel Olivares 1480, Oficina 416A, 1840000
-                  Ovalle
+                  {CONTACT.address.full}
                 </Link>
               </li>
             </ul>
@@ -102,7 +97,7 @@ export default function Footer() {
               Recursos
             </p>
             <ul className="mt-3 space-y-2">
-              {links.map((link) => (
+              {FOOTER_LINKS.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -117,7 +112,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} Dr. Harald Ziller Ortíz. Todos los derechos
+        © {getCurrentYear()} {DOCTOR.name}. Todos los derechos
         reservados.
       </div>
     </footer>

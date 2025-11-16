@@ -1,52 +1,8 @@
 "use client";
 
-import ServiceCard from "@/app/components/ui/ServiceCard";
 import { motion } from "framer-motion";
-
-const services = [
-  {
-    title: "Cirugía Oral",
-    description:
-      "Tratamiento quirúrgico de afecciones dentoalveolares, lesiones quísticas y anomalías óseas, garantizando una recuperación funcional y estética óptima.",
-    videoSrc: "/videos/services/co.mp4",
-    poster: "",
-  },
-  {
-    title: "Exodoncia de Terceros Molares",
-    description:
-      "Procedimientos seguros para la extracción de muelas del juicio retenidas o incluidas, reduciendo el trauma quirúrgico y las molestias postoperatorias.",
-    videoSrc: "/videos/services/etm.mp4",
-    poster: "",
-  },
-  {
-    title: "Implantes Dentales y Faciales",
-    description:
-      "Intervenciones para corregir alteraciones esqueléticas del maxilar y la mandíbula, mejorando la mordida, la respiración y la simetría facial.",
-    videoSrc: "/videos/services/id.mp4",
-    poster: "",
-  },
-  {
-    title: "Manejo del Dolor Facial y ATM",
-    description:
-      "Alivio efectivo para molestias articulares y musculares.Diagnóstico y tratamiento de disfunciones de la articulación temporomandibular y dolor facial mediante terapias conservadoras o quirúrgicas.",
-    videoSrc: "/videos/services/mdfa.mp4",
-    poster: "",
-  },
-  {
-    title: "Tratamiento de Fracturas Faciales",
-    description:
-      "Atención quirúrgica de traumatismos del macizo facial con técnicas que restauran la anatomía, la función y la apariencia natural.",
-    videoSrc: "/videos/services/tff.mp4",
-    poster: "",
-  },
-  {
-    title: "Tratamiento de Quistes y Tumores",
-    description:
-      "Tratamiento de lesiones benignas o patológicas en los maxilares, priorizando la preservación funcional y la reconstrucción estructural.",
-    videoSrc: "/videos/services/tqt.mp4",
-    poster: "",
-  },
-];
+import ServiceCard from "@/app/components/ui/ServiceCard";
+import { SERVICES } from "@/lib/constants";
 
 export default function ServicesSection() {
   return (
@@ -73,7 +29,7 @@ export default function ServicesSection() {
         </motion.div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
+          {SERVICES.map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>

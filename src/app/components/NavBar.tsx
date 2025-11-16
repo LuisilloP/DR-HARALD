@@ -1,23 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { RiMenuLine, RiCloseLine, RiWhatsappFill } from "react-icons/ri";
-
-const navItems = [
-  { label: "Inicio", target: "hero" },
-  { label: "Sobre mí", target: "about" },
-  { label: "Servicios", target: "services" },
-  { label: "Pacientes", target: "patients" },
-  { label: "FAQ", target: "faq" },
-  { label: "Convenios", target: "partners" },
-  { label: "Contacto", target: "contact" },
-];
-
-const scrollToSection = (id: string) => {
-  const section = document.getElementById(id);
-  section?.scrollIntoView({ behavior: "smooth", block: "start" });
-};
+import { NAV_ITEMS, CONTACT, DOCTOR } from "@/lib/constants";
+import { scrollToSection } from "@/lib/utils";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,19 +22,26 @@ export default function Navbar() {
           className="flex cursor-pointer items-center gap-2"
           onClick={() => handleNavigate("hero")}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sky-500 text-lg font-semibold shadow-inner shadow-white/30">
-            🦷
-          </span>
+         
+          <Image
+                          src={"/images/logo_v1.png"}
+                          alt={"logo"}
+                          width={36}
+                          height={36}
+                          sizes="150px"
+                          className="w-10 max-w-full object-contain"
+                          style={{ height: "auto" }}
+                        />
           <div className="leading-tight">
-            <p className="text-sm font-semibold">Dr. Harald Ziller Ortíz</p>
+            <p className="text-sm font-semibold">{DOCTOR.name}</p>
             <p className="text-[0.7rem] text-white/70 sm:text-xs">
-              Cirujano Maxilofacial &amp; Odontólogo Estético
+              {DOCTOR.subtitle}
             </p>
           </div>
         </div>
 
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          {navItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <button
               key={item.target}
               onClick={() => handleNavigate(item.target)}
@@ -57,7 +52,7 @@ export default function Navbar() {
             </button>
           ))}
           <a
-            href="https://wa.me/56927416008"
+            href={CONTACT.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-neutral-950 transition hover:bg-sky-400"
@@ -85,7 +80,7 @@ export default function Navbar() {
             transition={{ duration: 0.18 }}
             className="mx-auto mt-3 flex max-w-6xl flex-col gap-3 rounded-3xl border border-white/15 bg-neutral-900/95 p-6 text-white shadow-xl backdrop-blur-md md:hidden"
           >
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.target}
                 onClick={() => handleNavigate(item.target)}
@@ -96,7 +91,7 @@ export default function Navbar() {
               </button>
             ))}
             <a
-              href="https://wa.me/56927416008"
+              href={CONTACT.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-2xl bg-sky-500 px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-sky-400"

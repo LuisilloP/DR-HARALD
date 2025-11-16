@@ -60,59 +60,17 @@ export default function PictureAlbumSection() {
   // }, [hasAnimated]);
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+    <section className="relative  bg-neutral-900 from-white via-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Galería de Momentos
+        <div className="text-center mb-4 md:mb-8">
+          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+          Momentos
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Capturando los mejores momentos de nuestros pacientes y tratamientos
-          </p>
         </div>
 
-        {/* PhotoFall Section - COMENTADO */}
-        {/* <div className="mb-16 md:mb-20">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">
-              Galería Dinámica
-            </h3>
-            <button
-              onClick={() => fallRef.current?.replay()}
-              className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-            >
-              Repetir Animación
-            </button>
-          </div>
-          
-          <PhotoFall
-            ref={fallRef}
-            images={fallImages}
-            mode="ltr"
-            durationMs={2800}
-            staggerMs={340}
-            spreadX={0.2}
-            spreadY={0.2}
-            limitImagesOnMobile={0}
-            sideOffsetVw={60}
-            sideOffsetVwMobile={42}
-            autoStart={false}
-            photoClassName="!w-[84vw] sm:!w-[68vw] md:!w-[44vw] !min-w-[280px] !max-w-[480px]"
-          />
-        </div> */}
-
         {/* FilmRoll Section con Videos */}
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">
-              Carrete de Videos
-            </h3>
-            <p className="text-sm text-gray-500 hidden sm:block">
-              Pasa el cursor para pausar
-            </p>
-          </div>
-          
+        <div className="mb-8">  
           <FilmRoll
             media={rollVideos}
             mediaType="video"
