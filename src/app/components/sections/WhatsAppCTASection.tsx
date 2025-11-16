@@ -3,7 +3,7 @@ import Image from "next/image";
 import { RiWhatsappFill } from "react-icons/ri";
 
 const backgroundImage =
-  "/images/sillon_wsp.jpg";
+  "/images/sillon_wsp.webp";
 
 export default function WhatsAppCTASection() {
   return (
