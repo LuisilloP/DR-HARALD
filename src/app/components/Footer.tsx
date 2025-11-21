@@ -9,6 +9,10 @@ import { CONTACT, SOCIAL_MEDIA, DOCTOR, FOOTER_LINKS } from "@/lib/constants";
 import { getCurrentYear } from "@/lib/utils";
 
 export default function Footer() {
+  const mapEmbedUrl = `${CONTACT.address.googleMapsUrl}${
+    CONTACT.address.googleMapsUrl.includes("?") ? "&" : "?"
+  }output=embed`;
+
   return (
     <footer id="contact" className="bg-slate-950 py-16 text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:justify-between lg:px-8">
@@ -79,18 +83,24 @@ export default function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-400">
               Ubicaciones
             </p>
-            <ul className="mt-3 space-y-2">
-              <li>
-                <Link
-                  href={CONTACT.address.googleMapsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition hover:text-white"
-                >
-                  {CONTACT.address.full}
-                </Link>
-              </li>
-            </ul>
+            <div className="mt-3 overflow-hidden rounded-lg border border-white/10 bg-white/5 shadow-lg shadow-black/20">
+              <iframe
+                title="Ubicación en mapa"
+                src={mapEmbedUrl}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                className="h-48 w-full border-0"
+              />
+            </div>
+            <Link
+              href={CONTACT.address.googleMapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-block text-sm transition hover:text-white"
+            >
+              Ver en Google Maps
+            </Link>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-400">

@@ -18,30 +18,27 @@ interface PatientGallery {
 
 const patientGalleries: PatientGallery[] = [
   {
-    name: "Mariana López",
-    procedure: "Rehabilitación total",
+    name: "Paciente Anonimo",
+    procedure: "Control",
     summary:
-      "Secuencia de diseño de sonrisa, colocación de prótesis provisionales y rehabilitación final cerámica.",
+      "Control de paciente infantil con caries y tratamiento restaurador integral.",
     images: [
       {
-        src: "/images/pacients/p1.jpg",
-        alt: "p1",
+        src: "/images/pacients/paciente_nina.jpg",
+        alt: "paciente niña",
       },
       {
-        src: "/images/pacients/p2.jpg",
-        alt: "p2",
+        src: "/images/pacients/paciente_nina_2.jpg",
+        alt: "paciente niña dibujo",
       },
-      // {
-      //   src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
-      //   alt: "Mariana López - resultado final",
-      // },
+
     ],
   },
   {
-    name: "Carlos Martínez",
+    name: "Paciente Anonimo",
     procedure: "Implantes guiados",
     summary:
-      "Colocación asistida por computadora, carga inmediata y seguimiento de osteointegración en 6 semanas.",
+    "Ensanchamos el maxilar superior. Al abrirlo ligeramente, logramos mejorar la respiración y crear el espacio necesario para que los dientes se acomoden mejor.",
     images: [
        {
         src: "/images/pacients/p1.jpg",
@@ -51,16 +48,13 @@ const patientGalleries: PatientGallery[] = [
         src: "/images/pacients/p2.jpg",
         alt: "p2",
       },
-      // {
-      //   src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
-      //   alt: "Mariana López - resultado final",
-      // },
+
     ],
   },
 ];
 
 const beforeAfterCase = {
-  title: "Paciente Silvia – cirugía ortognática",
+  title: "Paciente Anonimo – cirugía ortognática",
   description:
     "Corrección de mordida abierta y armonización facial tras cirugía ortognática bimaxilar con planificación 3D.",
   beforeSrc: "/images/pacients/antes.png",
@@ -117,7 +111,7 @@ export default function PatientsCarousel() {
               Pacientes
             </p>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
-              Historias clínicas documentadas paso a paso
+              Historias clínicas documentadas
             </h2>
           </div>
         </div>
