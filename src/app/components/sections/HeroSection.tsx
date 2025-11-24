@@ -48,7 +48,7 @@ export default function HeroSection() {
                 href="#contact"
                 className="inline-flex items-center justify-center rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/30 transition hover:bg-sky-300"
               >
-                Reserva tu valoración
+                Reserva tu evaluación
               </a>
               <a
                 href="#services"
