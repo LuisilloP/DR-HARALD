@@ -4,6 +4,7 @@ import Footer from "@/app/components/Footer";
 import HeroSection from "@/app/components/sections/HeroSection";
 import AboutSection from "@/app/components/sections/AboutSection";
 import ServicesSection from "@/app/components/sections/ServicesSection";
+import ImplantsSection from "@/app/components/sections/ImplantsSection";
 import FaqSection from "@/app/components/sections/FaqSection";
 import PartnersSection from "@/app/components/sections/PartnersSection";
 import WhatsAppCTASection from "@/app/components/sections/WhatsAppCTASection";
@@ -28,6 +29,7 @@ export default function Home() {
         <AboutSection />
         <PictureAlbumSection />
         <ServicesSection />
+        <ImplantsSection />
         <PatientsCarousel />
         <WhatsAppCTASection />
         <FaqSection />

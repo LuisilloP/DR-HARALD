@@ -16,6 +16,21 @@ const faqs = [
       "La osteointegración inicial tarda entre 8 y 12 semanas, dependiendo de la calidad ósea. Desde la primera cita te indicamos controles y cuidados para favorecer una cicatrización rápida y colocar la prótesis definitiva en el momento adecuado.",
   },
   {
+    question: "¿Qué diferencia hay entre un implante subperióstico y uno endóseo?",
+    answer:
+      "El subperióstico se apoya sobre el hueso bajo el periostio y se fabrica a medida para adaptarse al contorno óseo; es ideal cuando el maxilar es delgado porque NO requiere perforar el hueso ni injertos. Los endóseos, en cambio, van dentro del hueso y necesitan mayor volumen óseo.",
+  },
+  {
+    question: "¿Necesito injertos óseos para un implante subperióstico?",
+    answer:
+      "No: SIN NECESIDAD DE OTRA CIRUGÍA PARA TOMAR INJERTOS ÓSEOS. Al apoyarse sobre el hueso, se evita la toma de injertos adicionales y la recuperación suele ser más rápida.",
+  },
+  {
+    question: "¿Cuándo se colocan los dientes sobre un implante subperióstico?",
+    answer:
+      "Cuando la fijación inicial es estable, SE INSTALAN LOS DIENTES DE FORMA INMEDIATA el mismo día (carga inmediata). Si el tejido necesita más tiempo, optamos por una carga progresiva para cuidar la adaptación.",
+  },
+  {
     question: "¿Puedo operarme si tengo diabetes?",
     answer:
       "Sí, siempre que la glicemia esté controlada. Coordinamos con tu médico tratante, realizamos exámenes previos y ajustamos el plan quirúrgico para garantizar una recuperación segura, minimizando riesgos de infección o retraso en la cicatrización.",

@@ -18,7 +18,7 @@ interface PatientGallery {
 
 const patientGalleries: PatientGallery[] = [
   {
-    name: "Paciente Anonimo",
+    name: "Paciente Anonimo nina ",
     procedure: "Control",
     summary:
       "Control de paciente infantil con caries y tratamiento restaurador integral.",
@@ -35,7 +35,7 @@ const patientGalleries: PatientGallery[] = [
     ],
   },
   {
-    name: "Paciente Anonimo",
+    name: "Paciente Anonimo hombre adulto",
     procedure: "Implantes guiados",
     summary:
     "Ensanchamos el maxilar superior. Al abrirlo ligeramente, logramos mejorar la respiración y crear el espacio necesario para que los dientes se acomoden mejor.",

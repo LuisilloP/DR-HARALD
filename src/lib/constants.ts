@@ -47,7 +47,7 @@ export const SOCIAL_MEDIA: SocialMediaLinks = {
 export const DOCTOR: DoctorInfo = {
   name: 'Dr. Harald Ziller Ortíz',
   title: 'Cirujano Maxilofacial',
-  subtitle: 'Cirujano Maxilofacial & Odontólogo Estético',
+  subtitle: 'Cirugia MaxiloFacial e Implantología Facial Avanzada',
   fullTitle: 'Cirujano Bucal y MaxiloFacial',
   location: 'Ovalle',
 } as const;
@@ -116,7 +116,7 @@ export const SERVICES: readonly Service[] = [
   },
   {
     title: 'Implantes Dentales y Faciales',
-    description: 'Intervenciones para corregir alteraciones esqueléticas del maxilar y la mandíbula, mejorando la mordida, la respiración y la simetría facial.',
+    description: 'Intervenciones para corregir alteraciones esqueleticas del maxilar y la mandibula, mejorando la mordida, la respiracion y la simetria facial.',
     videoSrc: '/videos/services/id.mp4',
     poster: '',
   },
@@ -145,3 +145,4 @@ export const ANALYTICS: AnalyticsConfig = {
   googleAnalyticsId: 'G-XXXXXXXXXX',
   facebookPixelId: 'TU_PIXEL_ID',
 } as const;
+
