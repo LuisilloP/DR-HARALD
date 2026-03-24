@@ -3,33 +3,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { siteContent } from "@/lib/content";
 
 const SLIDE_INTERVAL_MS = 3700;
-
-const IMPLANT_OPTIONS = [
-  {
-    title: "Protesis de contorno facial en PEEK",
-    description:
-      "Implantes solidos y biocompatibles para armonizar el tercio medio e inferior con disenos hechos a la medida a partir de TAC.",
-    bullets: [
-      "Cobertura en 11 sitios faciales: pomulos, menton, angulos mandibulares, frente y otras zonas clave.",
-      "Planeacion guiada por imagen para lograr simetria y ajuste preciso.",
-      "Material PEEK: elasticidad similar al hueso y estabilidad duradera.",
-    ],
-    images: ["/images/implants/fac_one.jpg", "/images/implants/fac_two.jpg"],
-  },
-  {
-    title: "Implantes subperiosticos",
-    description:
-      "Alternativa cuando no hay hueso suficiente para un implante endoseo; se apoya sobre el hueso bajo el periostio sin perforarlo.",
-    bullets: [
-      "Estructura de titanio hecha a medida que abraza el contorno del maxilar.",
-      "Menos invasivo y con recuperacion mas rapida al evitar injertos o perforaciones profundas.",
-      "Carga inmediata de dientes cuando la fijacion inicial es estable.",
-    ],
-    images: ["/images/implants/sub_1.jpg", "/images/implants/sub_2.jpg","/images/implants/sub_3.jpg","/images/implants/sub_4.jpg"],
-  },
-];
 
 function AutoSlider({
   images,
@@ -71,6 +47,8 @@ function AutoSlider({
 }
 
 export default function ImplantsSection() {
+  const { implantsSection, implants } = siteContent;
+
   return (
     <section
       id="implants"
@@ -85,20 +63,18 @@ export default function ImplantsSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-500">
-            Implantes faciales y dentales
+            {implantsSection.badge}
           </p>
           <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">
-            Con que implantes trabajo
+            {implantsSection.title}
           </h2>
           <p className="mt-4 text-base text-slate-600 sm:text-lg">
-            Resumen de las opciones permanentes que utilizo para mejorar contornos,
-            recuperar estructura y devolver funcionalidad sin recurrir a cirugias adicionales
-            de injerto.
+            {implantsSection.description}
           </p>
         </motion.div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          {IMPLANT_OPTIONS.map((item, index) => (
+          {implants.map((item, index) => (
             <motion.article
               key={item.title}
               initial={{ opacity: 0, y: 24 }}
@@ -115,7 +91,7 @@ export default function ImplantsSection() {
 
               <div className="flex flex-col gap-4 p-6 sm:p-7">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-sky-500">
-                  {index === 0 ? "Estetica y contorno" : "Rehabilitacion dental"}
+                  {item.pillLabel}
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 sm:text-2xl">
                   {item.title}
@@ -137,12 +113,14 @@ export default function ImplantsSection() {
         </div>
 
         <div className="mt-10 rounded-3xl border border-sky-100 bg-sky-50 px-6 py-7 text-center shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-600">
-            SIN NECESIDAD DE OTRA CIRUGIA PARA TOMAR INJERTOS OSEOS
-          </p>
-          <p className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-sky-600">
-            SE INSTALAN LOS DIENTES DE FORMA INMEDIATA
-          </p>
+          {implantsSection.banners.map((line) => (
+            <p
+              key={line}
+              className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-600"
+            >
+              {line}
+            </p>
+          ))}
         </div>
       </div>
     </section>

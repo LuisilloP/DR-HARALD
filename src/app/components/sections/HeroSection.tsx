@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import AnimatedCounter from "@/app/components/ui/AnimatedCounter";
 import { OptimizedVideo } from "@/components/OptimizedVideo";
 import { HERO_STATS, DOCTOR } from "@/lib/constants";
+import { siteContent } from "@/lib/content";
 
 export default function HeroSection() {
+  const { hero } = siteContent;
+
   return (
     <section
       id="hero"
@@ -37,24 +40,20 @@ export default function HeroSection() {
             </h1>
 
             <p className="mt-4 text-base text-white/80 sm:text-lg">
-              Especialista en cirugía oral, implantes dentales y tratamientos
-              faciales avanzados.
-              <br></br>Atiendo en Ovalle y ofrezco atención preferencial a
-              pacientes de Punitaqui, Monte Patria, Río Hurtado, Combarbalá, La
-              Serena y Coquimbo.
+              {hero.description}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#contact"
+                href="/reservas"
                 className="inline-flex items-center justify-center rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/30 transition hover:bg-sky-300"
               >
-                Reserva tu evaluación
+                {hero.primaryCta.label}
               </a>
               <a
-                href="#services"
+                href={hero.secondaryCta.href}
                 className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Explorar servicios
+                {hero.secondaryCta.label}
               </a>
             </div>
           </motion.div>
@@ -65,12 +64,15 @@ export default function HeroSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid gap-4 rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-lg grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-2 gap-4 rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-lg lg:grid-cols-4"
         >
           {HERO_STATS.map((stat) => (
             <div key={stat.label} className="rounded-2xl bg-white/5 p-5">
               <p className="text-3xl font-semibold text-white">
-                <AnimatedCounter value={stat.value} suffix={'suffix' in stat ? stat.suffix : undefined} />
+                <AnimatedCounter
+                  value={stat.value}
+                  suffix={"suffix" in stat ? stat.suffix : undefined}
+                />
               </p>
               <p className="mt-2 text-sm font-medium text-white/70">
                 {stat.label}

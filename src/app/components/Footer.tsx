@@ -5,10 +5,17 @@ import {
   RiLinkedinFill,
   RiWhatsappFill,
 } from "react-icons/ri";
-import { CONTACT, SOCIAL_MEDIA, DOCTOR, FOOTER_LINKS } from "@/lib/constants";
+import {
+  CONTACT,
+  SOCIAL_MEDIA,
+  DOCTOR,
+  FOOTER_LINKS,
+} from "@/lib/constants";
 import { getCurrentYear } from "@/lib/utils";
+import { siteContent } from "@/lib/content";
 
 export default function Footer() {
+  const { footer } = siteContent;
   const mapEmbedUrl = `${CONTACT.address.googleMapsUrl}${
     CONTACT.address.googleMapsUrl.includes("?") ? "&" : "?"
   }output=embed`;
@@ -20,14 +27,14 @@ export default function Footer() {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-400">
             {DOCTOR.name}
           </p>
-          <p className="mt-4 text-2xl font-semibold">
-            Agenda tu valoración y diseñemos juntos tu tratamiento.
-          </p>
+          <p className="mt-4 text-2xl font-semibold">{footer.headline}</p>
           <p className="mt-4 text-sm text-white/70">
-            Horarios: {CONTACT.schedule.full}
+            {footer.hoursLabel}: {CONTACT.schedule.full}
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/80">
-            <span>Tel. {CONTACT.phone}</span>
+            <span>
+              {footer.phoneLabel} {CONTACT.phone}
+            </span>
             <span>{CONTACT.email}</span>
             <Link
               href={CONTACT.address.googleMapsUrl}
@@ -81,11 +88,11 @@ export default function Footer() {
         <div className="grid gap-6 text-sm text-white/80 sm:grid-cols-2 lg:grid-cols-1">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-400">
-              Ubicaciones
+              {footer.locationsTitle}
             </p>
             <div className="mt-3 overflow-hidden rounded-lg border border-white/10 bg-white/5 shadow-lg shadow-black/20">
               <iframe
-                title="Ubicación en mapa"
+                title={footer.mapFrameTitle}
                 src={mapEmbedUrl}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -99,12 +106,12 @@ export default function Footer() {
               rel="noreferrer"
               className="mt-3 inline-block text-sm transition hover:text-white"
             >
-              Ver en Google Maps
+              {footer.mapLinkLabel}
             </Link>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-400">
-              Recursos
+              {footer.resourcesTitle}
             </p>
             <ul className="mt-3 space-y-2">
               {FOOTER_LINKS.map((link) => (
@@ -122,8 +129,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50">
-        © {getCurrentYear()} {DOCTOR.name}. Todos los derechos
-        reservados.
+        {footer.copyrightPrefix} {getCurrentYear()} {DOCTOR.name}.{" "}
+        {footer.copyrightSuffix}
       </div>
     </footer>
   );

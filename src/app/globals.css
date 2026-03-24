@@ -53,3 +53,65 @@ body {
     font-family: var(--font-mightype) !important;
   }
 }
+
+/* Styled navigation for patient gallery carousels */
+.patient-case-swiper .swiper-button-next,
+.patient-case-swiper .swiper-button-prev {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background: rgba(248, 250, 252, 0.92);
+  color: #0f172a;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 12px 26px rgba(2, 6, 23, 0.22);
+  transition: transform 150ms ease, box-shadow 150ms ease,
+    background-color 150ms ease, color 150ms ease;
+}
+
+.patient-case-swiper .swiper-button-next::after,
+.patient-case-swiper .swiper-button-prev::after {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.patient-case-swiper .swiper-button-next:hover,
+.patient-case-swiper .swiper-button-prev:hover {
+  transform: translateY(-2px);
+  background: #0f172a;
+  color: #e2e8f0;
+  box-shadow: 0 16px 30px rgba(2, 6, 23, 0.32);
+}
+
+.patient-case-swiper .swiper-button-disabled {
+  opacity: 0.35;
+  box-shadow: none;
+}
+
+.patient-case-swiper .swiper-pagination {
+  bottom: 0.75rem;
+}
+
+.patient-case-swiper .swiper-pagination-bullet {
+  width: 0.65rem;
+  height: 0.65rem;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  border: 1px solid rgba(148, 163, 184, 0.65);
+  transition: transform 150ms ease, background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.patient-case-swiper .swiper-pagination-bullet-active {
+  background: #38bdf8;
+  border-color: #bae6fd;
+  transform: scale(1.15);
+}
+
+.before-after-compare button {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.before-after-compare button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 14px 28px rgba(2, 6, 23, 0.4) !important;
+}

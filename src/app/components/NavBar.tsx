@@ -2,9 +2,18 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { RiMenuLine, RiCloseLine, RiWhatsappFill } from "react-icons/ri";
-import { NAV_ITEMS, CONTACT, DOCTOR } from "@/lib/constants";
+import {
+  RiMenuLine,
+  RiCloseLine,
+  RiCalendarScheduleLine,
+} from "react-icons/ri";
+import {
+  NAV_ITEMS,
+  DOCTOR,
+  NAVIGATION_CTA_LABEL,
+} from "@/lib/constants";
 import { scrollToSection } from "@/lib/utils";
 
 export default function Navbar() {
@@ -51,15 +60,13 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
-          <a
-            href={CONTACT.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/reservas"
             className="flex items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-neutral-950 transition hover:bg-sky-400"
           >
-            <RiWhatsappFill className="text-lg" />
-            Agendar cita
-          </a>
+            <RiCalendarScheduleLine className="text-lg" />
+            {NAVIGATION_CTA_LABEL}
+          </Link>
         </nav>
 
         <button
@@ -90,15 +97,13 @@ export default function Navbar() {
                 {item.label}
               </button>
             ))}
-            <a
-              href={CONTACT.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/reservas"
               className="flex items-center justify-center gap-2 rounded-2xl bg-sky-500 px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-sky-400"
             >
-              <RiWhatsappFill className="text-lg" />
-              Agendar cita
-            </a>
+              <RiCalendarScheduleLine className="text-lg" />
+              {NAVIGATION_CTA_LABEL}
+            </Link>
           </motion.nav>
         )}
       </AnimatePresence>

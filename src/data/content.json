@@ -1,0 +1,306 @@
+{
+  "doctor": {
+    "name": "Dr. Harald Ziller Ortiz",
+    "title": "Cirujano Maxilofacial",
+    "subtitle": "Cirugía Maxilofacial e Implantología Facial Avanzada",
+    "fullTitle": "Cirujano Bucal y Maxilofacial",
+    "location": "Ovalle"
+  },
+  "contact": {
+    "phone": "+56927416008",
+    "whatsappUrl": "https://wa.me/56927416008",
+    "email": "dr.haraldziller@gmail.com",
+    "address": {
+      "street": "Av. Manuel Peñafiel Olivares 1480, Oficina 416A",
+      "city": "Ovalle",
+      "region": "Región de Coquimbo",
+      "postalCode": "1840000",
+      "country": "Chile",
+      "countryCode": "CL",
+      "full": "Av. Manuel Peñafiel Olivares 1480, Oficina 416A, 1840000 Ovalle",
+      "googleMapsUrl": "https://www.google.com/maps?q=Av.+Manuel+Pe%C3%B1afiel+Olivares+1480,+Oficina+416A,+1840000+Ovalle"
+    },
+    "schedule": {
+      "weekdays": "Lunes a Viernes",
+      "hours": "8:00 a 19:00 hrs",
+      "full": "Lunes a Viernes · 8:00 a 19:00 hrs."
+    }
+  },
+  "socialMedia": {
+    "instagram": "https://www.instagram.com/dr.haraldziller/",
+    "facebook": "https://www.facebook.com/harald.ortiz",
+    "linkedin": "https://cl.linkedin.com/in/harald-ziller-ortiz-58435460"
+  },
+  "site": {
+    "url": "https://drharaldziller.cl",
+    "name": "Dr. Harald Ziller Ortiz - Cirujano Maxilofacial",
+    "description": "Cirujano Maxilofacial en Ovalle, Región de Coquimbo. Especialista en implantes dentales, cirugía ortognática, extracción de terceros molares, diseño de sonrisa y rehabilitación oral. Atención profesional con tecnología de vanguardia."
+  },
+  "navigation": {
+    "items": [
+      { "label": "Inicio", "target": "hero" },
+      { "label": "Sobre mí", "target": "about" },
+      { "label": "Servicios", "target": "services" },
+      { "label": "Pacientes", "target": "patients" },
+      { "label": "FAQ", "target": "faq" },
+      { "label": "Convenios", "target": "partners" },
+      { "label": "Contacto", "target": "contact" }
+    ],
+    "ctaLabel": "Agendar cita"
+  },
+  "hero": {
+    "description": "Especialista en cirugía oral, implantes dentales y tratamientos faciales avanzados. Atiendo en Ovalle y ofrezco atención preferencial a pacientes de Punitaqui, Monte Patria, Río Hurtado, Combarbalá, La Serena y Coquimbo.",
+    "primaryCta": { "label": "Reserva tu evaluación", "href": "#contact" },
+    "secondaryCta": { "label": "Explorar servicios", "href": "#services" },
+    "stats": [
+      { "label": "Cirugías exitosas", "value": 1230, "suffix": "+" },
+      { "label": "Pacientes dentales", "value": 1437, "suffix": "+" },
+      { "label": "Años de experiencia", "value": 19 },
+      { "label": "Pacientes satisfechos", "value": 98, "suffix": "%" }
+    ]
+  },
+  "about": {
+    "badge": "Conóceme",
+    "cardName": "Dr. Harald Ziller Ortiz",
+    "cardSubtitle": "Cirujano maxilofacial certificado, con especialidad en estética dental y armonización facial.",
+    "sectionBadge": "Sobre mí",
+    "title": "Comprometido con tu bienestar y tu confianza al sonreír",
+    "paragraphs": [
+      "Entre los años 2007 y 2012 trabajé como Odontólogo General de Zona en el Servicio de Salud Coquimbo, atendiendo a distintas comunidades y adquiriendo una amplia experiencia clínica en diversas áreas de la odontología.",
+      "He atendido a más de 1.200 pacientes a lo largo de mi carrera, enfocándome en el manejo quirúrgico y estético del rostro.",
+      "Actualmente me desempeño como Médico Jefe del Servicio de Odontología en el Hospital de Ovalle, donde realizo procedimientos de cirugía oral, implantología y reconstrucción facial, además de ofrecer servicios como extracciones complejas y terceros molares, implantes dentales, regeneración ósea, cirugía ortognática y reconstructiva, tratamientos de patología oral y quistes, biopsias, procedimientos y tratamientos de trauma facial."
+    ],
+    "credentials": [
+      {
+        "title": "Formación",
+        "description": "Cirujano Dentista titulado en la Universidad de Valparaíso (2006), con sólida formación clínica y orientación al manejo de patologías orales complejas."
+      },
+      {
+        "title": "Especialización",
+        "description": "Especialista en Cirugía Oral y Maxilofacial por la Universidad de Chile (2016), enfocado en cirugía ortognática, reconstrucción facial y tratamiento integral de trastornos dentofaciales."
+      }
+    ],
+    "imageAlt": "Dr. Harald Ziller"
+  },
+  "servicesSection": {
+    "badge": "Mis Servicios",
+    "title": "Tratamientos integrales centrados en el paciente",
+    "description": "Diseñamos planes personalizados que combinan cirugía, estética y rehabilitación para ofrecer resultados predecibles y una recuperación confortable."
+  },
+  "services": [
+    {
+      "title": "Cirugía Oral",
+      "description": "Tratamiento quirúrgico de afecciones dentoalveolares, lesiones quísticas y anomalías óseas, garantizando una recuperación funcional y estética óptima.",
+      "videoSrc": "/videos/services/co.mp4",
+      "poster": ""
+    },
+    {
+      "title": "Exodoncia de Terceros Molares",
+      "description": "Procedimientos seguros para la extracción de muelas del juicio retenidas o incluidas, reduciendo el trauma quirúrgico y las molestias postoperatorias.",
+      "videoSrc": "/videos/services/etm.mp4",
+      "poster": ""
+    },
+    {
+      "title": "Implantes Dentales y Faciales",
+      "description": "Intervenciones para corregir alteraciones esqueléticas del maxilar y la mandíbula, mejorando la mordida, la respiración y la simetría facial.",
+      "videoSrc": "/videos/services/id.mp4",
+      "poster": ""
+    },
+    {
+      "title": "Manejo del Dolor Facial y ATM",
+      "description": "Alivio efectivo para molestias articulares y musculares. Diagnóstico y tratamiento de disfunciones de la articulación temporomandibular y dolor facial mediante terapias conservadoras o quirúrgicas.",
+      "videoSrc": "/videos/services/mdfa.mp4",
+      "poster": ""
+    },
+    {
+      "title": "Tratamiento de Fracturas Faciales",
+      "description": "Atención quirúrgica de traumatismos del macizo facial con técnicas que restauran la anatomía, la función y la apariencia natural.",
+      "videoSrc": "/videos/services/tff.mp4",
+      "poster": ""
+    },
+    {
+      "title": "Tratamiento de Quistes y Tumores",
+      "description": "Tratamiento de lesiones benignas o patológicas en los maxilares, priorizando la preservación funcional y la reconstrucción estructural.",
+      "videoSrc": "/videos/services/tqt.mp4",
+      "poster": ""
+    }
+  ],
+  "implantsSection": {
+    "badge": "Implantes faciales y dentales",
+    "title": "Con qué implantes trabajo",
+    "description": "Resumen de las opciones permanentes que utilizo para mejorar contornos, recuperar estructura y devolver funcionalidad sin recurrir a cirugías adicionales de injerto.",
+    "banners": [
+      "SIN NECESIDAD DE OTRA CIRUGÍA PARA TOMAR INJERTOS ÓSEOS",
+      "SE INSTALAN LOS DIENTES DE FORMA INMEDIATA"
+    ]
+  },
+  "implants": [
+    {
+      "pillLabel": "Estética y contorno",
+      "title": "Prótesis de contorno facial en PEEK",
+      "description": "Implantes sólidos y biocompatibles para armonizar el tercio medio e inferior con diseños hechos a la medida a partir de TAC.",
+      "bullets": [
+        "Cobertura en 11 sitios faciales: pómulos, mentón, ángulos mandibulares, frente y otras zonas clave.",
+        "Planeación guiada por imagen para lograr simetría y ajuste preciso.",
+        "Material PEEK: elasticidad similar al hueso y estabilidad duradera."
+      ],
+      "images": ["/images/implants/fac_one.jpg", "/images/implants/fac_two.jpg"]
+    },
+    {
+      "pillLabel": "Rehabilitación dental",
+      "title": "Implantes subperiósticos",
+      "description": "Alternativa cuando no hay hueso suficiente para un implante endóseo; se apoya sobre el hueso bajo el periostio sin perforarlo.",
+      "bullets": [
+        "Estructura de titanio hecha a medida que abraza el contorno del maxilar.",
+        "Menos invasivo y con recuperación más rápida al evitar injertos o perforaciones profundas.",
+        "Carga inmediata de dientes cuando la fijación inicial es estable."
+      ],
+      "images": [
+        "/images/implants/sub_1.jpg",
+        "/images/implants/sub_2.jpg",
+        "/images/implants/sub_3.jpg",
+        "/images/implants/sub_4.jpg"
+      ]
+    }
+  ],
+  "pictureAlbum": {
+    "title": "Momentos",
+    "videos": [
+      "/videos/movie/mv1_o.mp4",
+      "/videos/movie/mv2_o.mp4",
+      "/videos/movie/mv3_o.mp4",
+      "/videos/movie/mv4_o.mp4"
+    ],
+    "direction": "left"
+  },
+  "patientsSection": {
+    "badge": "Pacientes",
+    "title": "Historias clínicas documentadas"
+  },
+  "patients": {
+    "galleries": [
+      {
+        "name": "Paciente Anónimo niña",
+        "procedure": "Control",
+        "summary": "Control de paciente infantil con caries y tratamiento restaurador integral.",
+        "images": [
+          { "src": "/images/pacients/paciente_nina.jpg", "alt": "Paciente niña" },
+          { "src": "/images/pacients/paciente_nina_2.jpg", "alt": "Paciente niña ilustración" }
+        ]
+      },
+      {
+        "name": "Paciente Anónima adulta",
+        "procedure": "Cirugía ortognática",
+        "summary": "Paciente anónima intervenida con cirugía ortognática bimaxilar para corregir su mordida y equilibrar su perfil facial.",
+        "images": [
+          { "src": "/images/pacients/maxilo/maxilo_one.webp", "alt": "Cirugía ortognática planificación lateral" },
+          { "src": "/images/pacients/maxilo/maxilo_two.webp", "alt": "Cirugía ortognática secuencia postoperatoria" },
+          { "src": "/images/pacients/maxilo/maxilo_thre.webp", "alt": "Cirugía ortognática seguimiento clínico" },
+          { "src": "/images/pacients/maxilo/maxilo_four.webp", "alt": "Cirugía ortognática control final" }
+        ]
+      },
+      {
+        "name": "Paciente Ortognática H",
+        "procedure": "Cirugía ortognática",
+        "summary": "Corrección ortognática bimaxilar para cerrar mordida abierta y proyectar el perfil facial, mejorando función y estética.",
+        "images": [
+          { "src": "/images/pacients/ortognatica_h/ortognatica_h_antes.webp", "alt": "Paciente Ortognática H antes de la cirugía - perfil" },
+          { "src": "/images/pacients/ortognatica_h/ortognatica_h_antes_1.webp", "alt": "Paciente Ortognática H antes de la cirugía - frontal" },
+          { "src": "/images/pacients/ortognatica_h/ortognatica_h_despues.webp", "alt": "Paciente Ortognática H después de la cirugía - perfil" },
+          { "src": "/images/pacients/ortognatica_h/ortognatica_h_despues_1.webp", "alt": "Paciente Ortognática H después de la cirugía - frontal" }
+        ]
+      },
+      {
+        "name": "Paciente Anónimo hombre adulto",
+        "procedure": "Implantes guiados",
+        "summary": "Ensanchamos el maxilar superior. Al abrirlo ligeramente, logramos mejorar la respiración y crear el espacio necesario para que los dientes se acomoden mejor.",
+        "images": [
+          { "src": "/images/pacients/p1.jpg", "alt": "Implantes guiados - caso 1" },
+          { "src": "/images/pacients/p2.jpg", "alt": "Implantes guiados - caso 2" }
+        ]
+      }
+    ],
+    "beforeAfter": {
+      "title": "Paciente Anónimo – cirugía ortognática",
+      "description": "Corrección de mordida abierta y armonización facial tras cirugía ortognática bimaxilar con planificación 3D.",
+      "beforeSrc": "/images/pacients/antes.webp",
+      "afterSrc": "/images/pacients/despues.webp",
+      "highlight": "Antes / Después"
+    }
+  },
+  "faqSection": {
+    "badge": "Preguntas frecuentes",
+    "title": "Resolvemos tus dudas antes, durante y después del tratamiento",
+    "description": "Selecciona una pregunta para ver la respuesta. Nuestro equipo de atención está disponible para profundizar en cada caso."
+  },
+  "faqs": [
+    {
+      "question": "¿La cirugía de terceros molares duele mucho?",
+      "answer": "No. Trabajamos con anestesia local y, cuando es necesario, con sedación consciente para que no sientas dolor durante el procedimiento. El postoperatorio se controla con antiinflamatorios y analgésicos recetados, por lo que las molestias suelen ser leves y manejables."
+    },
+    {
+      "question": "¿Cuánto tarda en cicatrizar un implante dental?",
+      "answer": "La osteointegración inicial tarda entre 8 y 12 semanas, dependiendo de la calidad ósea. Desde la primera cita te indicamos controles y cuidados para favorecer una cicatrización rápida y colocar la prótesis definitiva en el momento adecuado."
+    },
+    {
+      "question": "¿Qué diferencia hay entre un implante subperióstico y uno endóseo?",
+      "answer": "El subperióstico se apoya sobre el hueso bajo el periostio y se fabrica a medida para adaptarse al contorno óseo; es ideal cuando el maxilar es delgado porque no requiere perforar el hueso ni injertos. Los endóseos, en cambio, van dentro del hueso y necesitan mayor volumen óseo."
+    },
+    {
+      "question": "¿Necesito injertos óseos para un implante subperióstico?",
+      "answer": "No: sin necesidad de otra cirugía para tomar injertos óseos. Al apoyarse sobre el hueso, se evita la toma de injertos adicionales y la recuperación suele ser más rápida."
+    },
+    {
+      "question": "¿Cuándo se colocan los dientes sobre un implante subperióstico?",
+      "answer": "Cuando la fijación inicial es estable, se instalan los dientes de forma inmediata el mismo día (carga inmediata). Si el tejido necesita más tiempo, optamos por una carga progresiva para cuidar la adaptación."
+    },
+    {
+      "question": "¿Puedo operarme si tengo diabetes?",
+      "answer": "Sí, siempre que la glicemia esté controlada. Coordinamos con tu médico tratante, realizamos exámenes previos y ajustamos el plan quirúrgico para garantizar una recuperación segura, minimizando riesgos de infección o retraso en la cicatrización."
+    },
+    {
+      "question": "¿Qué cuidados debo tener después de una cirugía oral?",
+      "answer": "Te entregamos instrucciones detalladas que incluyen reposo relativo, dieta blanda, higiene con enjuagues específicos y uso de medicamentos. Además cuentas con un número de contacto directo para resolver dudas durante el proceso de recuperación."
+    }
+  ],
+  "partnersSection": {
+    "badge": "Convenios",
+    "title": "Alianzas estratégicas"
+  },
+  "partners": [
+    { "name": "ACHS", "logo": "/images/asociated/achs.png" },
+    { "name": "Clínica Aéreo", "logo": "/images/asociated/aereo.png" },
+    { "name": "Clínica Cable", "logo": "/images/asociated/cable.png" },
+    { "name": "Imatec", "logo": "/images/asociated/imatec.png" },
+    { "name": "Centro Mirador", "logo": "/images/asociated/mirador.png" },
+    { "name": "PHAM", "logo": "/images/asociated/pham.png" }
+  ],
+  "whatsappCta": {
+    "badge": "Sigamos en contacto",
+    "title": "Sigamos conversando por WhatsApp",
+    "description": "Agenda tu consulta o resuelve tus dudas directamente con el Dr. Harald Ziller.",
+    "buttonLabel": "Hablar por WhatsApp",
+    "backgroundImage": "/images/sillon_wsp.webp",
+    "backgroundAlt": "Consultorio dental"
+  },
+  "footer": {
+    "headline": "Agenda tu valoración y diseñemos juntos tu tratamiento.",
+    "locationsTitle": "Ubicaciones",
+    "resourcesTitle": "Recursos",
+    "hoursLabel": "Horarios",
+    "phoneLabel": "Tel.",
+    "mapLinkLabel": "Ver en Google Maps",
+    "mapFrameTitle": "Ubicación en mapa",
+    "copyrightPrefix": "©",
+    "copyrightSuffix": "Todos los derechos reservados."
+  },
+  "footerLinks": [
+    { "label": "Aviso de privacidad", "href": "#" },
+    { "label": "Política de cookies", "href": "#" },
+    { "label": "Términos del servicio", "href": "#" }
+  ],
+  "analytics": {
+    "googleAnalyticsId": "G-XXXXXXXXXX",
+    "facebookPixelId": "TU_PIXEL_ID"
+  }
+}
