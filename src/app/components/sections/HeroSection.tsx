@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import AnimatedCounter from "@/app/components/ui/AnimatedCounter";
 import { OptimizedVideo } from "@/components/OptimizedVideo";
-import { HERO_STATS, DOCTOR } from "@/lib/constants";
+import { HERO_STATS, CONTACT, DOCTOR } from "@/lib/constants";
 import { siteContent } from "@/lib/content";
 
 export default function HeroSection() {
@@ -44,7 +44,9 @@ export default function HeroSection() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="/reservas"
+                href={CONTACT.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/30 transition hover:bg-sky-300"
               >
                 {hero.primaryCta.label}

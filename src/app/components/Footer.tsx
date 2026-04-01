@@ -11,14 +11,14 @@ import {
   DOCTOR,
   FOOTER_LINKS,
 } from "@/lib/constants";
-import { getCurrentYear } from "@/lib/utils";
+import { getCurrentYear, getGoogleMapsEmbedUrl } from "@/lib/utils";
 import { siteContent } from "@/lib/content";
 
 export default function Footer() {
   const { footer } = siteContent;
-  const mapEmbedUrl = `${CONTACT.address.googleMapsUrl}${
-    CONTACT.address.googleMapsUrl.includes("?") ? "&" : "?"
-  }output=embed`;
+  const mapEmbedUrl =
+    CONTACT.address.googleMapsEmbedUrl ??
+    getGoogleMapsEmbedUrl(CONTACT.address.googleMapsUrl);
 
   return (
     <footer id="contact" className="bg-slate-950 py-16 text-white">

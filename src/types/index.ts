@@ -43,6 +43,7 @@ export interface ContactInfo {
     readonly countryCode: string;
     readonly full: string;
     readonly googleMapsUrl: string;
+    readonly googleMapsEmbedUrl?: string;
   };
   readonly schedule: {
     readonly weekdays: string;

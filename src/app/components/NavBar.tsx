@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   RiMenuLine,
   RiCloseLine,
-  RiCalendarScheduleLine,
+  RiWhatsappFill,
 } from "react-icons/ri";
 import {
   NAV_ITEMS,
+  CONTACT,
   DOCTOR,
   NAVIGATION_CTA_LABEL,
 } from "@/lib/constants";
@@ -60,13 +60,15 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
-          <Link
-            href="/reservas"
+          <a
+            href={CONTACT.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-neutral-950 transition hover:bg-sky-400"
           >
-            <RiCalendarScheduleLine className="text-lg" />
+            <RiWhatsappFill className="text-lg" />
             {NAVIGATION_CTA_LABEL}
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -97,13 +99,15 @@ export default function Navbar() {
                 {item.label}
               </button>
             ))}
-            <Link
-              href="/reservas"
+            <a
+              href={CONTACT.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-2xl bg-sky-500 px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-sky-400"
             >
-              <RiCalendarScheduleLine className="text-lg" />
+              <RiWhatsappFill className="text-lg" />
               {NAVIGATION_CTA_LABEL}
-            </Link>
+            </a>
           </motion.nav>
         )}
       </AnimatePresence>
