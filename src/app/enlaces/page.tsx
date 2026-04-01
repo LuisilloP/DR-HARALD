@@ -50,12 +50,12 @@ const quickLinks: QuickLink[] = [
 ].filter((item) => Boolean(item.href));
 
 const PRESTACIONES_ENLACES = [
+  "Extraccion de Terceros Molares (Muelas del Juicio)",
   "Cirugia de ATM y Dolor Facial",
   "Cirugia Ortognatica",
   "Implantes Dentales",
   "Blefaroplastia",
   "Liposuccion de Papada",
-  "Extraccion de Muelas del Juicio",
   "Cirugia de Quistes y Tumores",
   "Implantes Faciales",
   "Mentoplastia",
@@ -118,13 +118,12 @@ export default function EnlacesPage() {
 
         <section className="mt-5 rounded-3xl border border-[#79a8cf]/30 bg-white/60 p-4 shadow-[0_22px_44px_-28px_rgba(31,79,123,0.35)] backdrop-blur-sm">
           <p className="text-center text-lg font-semibold tracking-[0.03em] text-slate-800 sm:text-xl">
-            Prestaciones <span className="text-[#2e78b3]">Dr. Harald</span>
+            Prestaciones <span className="text-[#2e78b3]">Dr. Harald Ziller</span>
+          </p>
+          <p className="mt-1 text-center text-sm font-medium text-[#4f6f94]">
+            Cirujano Maxilofacial
           </p>
           <PrestacionesList items={PRESTACIONES_ENLACES} />
-          <p className="mt-3 text-center text-xs text-[#4f6f94]">
-            Atencion especializada en cirugia maxilofacial e implantologia
-            facial avanzada.
-          </p>
         </section>
 
         <section className="mt-6 rounded-3xl border border-[#79a8cf]/35 bg-white/50 p-4 shadow-[0_24px_60px_-32px_rgba(31,79,123,0.35)] backdrop-blur-sm sm:p-5">

@@ -9,6 +9,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:compile": "next build --experimental-build-mode compile",
+    "build:generate": "next build --experimental-build-mode generate",
+    "build:quick": "npm run build:compile",
     "start": "next start",
     "lint": "eslint"
   },
